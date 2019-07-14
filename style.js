@@ -1,8 +1,8 @@
 
 
 const splitting = () => {
-  const total = parseInt(document.querySelector('#total').value)
-  const people = document.querySelector('#people').value
+  let total = parseInt(document.querySelector('#total').value)
+  const people = parseInt(document.querySelector('#people').value)
 
 
   if(tipPercent.value.length > 0) {
@@ -12,7 +12,8 @@ const splitting = () => {
   }
     else if (tipCustom.value.length > 0) {
       const tipCustom = parseInt(document.querySelector('#tipCustom').value);
-      document.querySelector('#perPerson').innerHTML = (total + tipCustom / people).toFixed(2);
+      total = total + tipCustom
+      document.querySelector('#perPerson').innerHTML = (total / people).toFixed(2);
   }
   else {
     const result = total / people;
@@ -21,12 +22,18 @@ const splitting = () => {
  }
 
 
-const btn = document.querySelector('#submit')
-btn.addEventListener('click', function(e) {
-  e.preventDefault();
-  splitting()
+const splitBtn = document.querySelector('#splitBtn')
+  splitBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    splitting()
 })
 
+
+
+document.querySelector('#resetBtn').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.querySelector('.insert').reset();
+})
 
  const switchTip = () => {
    const tipPercent = document.querySelector('#tipPercent');

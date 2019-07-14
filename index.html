@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://valeriaragonese.altervista.org/reset.css">
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Bill Splitter</title>
     <script src="https://kit.fontawesome.com/2d2b5aa704.js"></script>
@@ -15,18 +16,21 @@
 
   <form class="insert">
     <label id="totalL"><i class="fas fa-coins"></i> How much?</label>
-    <input id="total" placeholder="add the total">
+    <input type="number" id="total" placeholder="add the total">
 
      <label id="totalL"><i class="fas fa-users"></i> How many?</label>
-    <input id="people" placeholder="add the number of people">
+    <input type="number" id="people" placeholder="add the number of people">
 
     <label id="tipL"><i class="fas fa-heart"></i> Feelin' generous? Add a tip!</label>
-    <input id="tipPercent" placeholder="add % of the total">
-    <input id="tipCustom" placeholder="add your tip">
+    <input type="number" id="tipPercent" placeholder="add % of the total">
+    <input type="number" id="tipCustom" placeholder="add your tip">
     <button id="switchTip">prefer a custom tip?</button>
 
+    <div class="buttonSpace">
+      <button id="splitBtn">Split!</button>
+      <button id="resetBtn">Reset</button>
+    </div>
 
-    <button id="submit">Split!</button>
     <div id="perPerson">0</div>
   </form>
 

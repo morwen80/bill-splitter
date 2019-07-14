@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Barriecito&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Barriecito|Lora&display=swap');
 
 * {
   margin: 0;
@@ -6,6 +6,7 @@
 }
 body {
   color: #2E3F51;
+  font-family: 'Lora', serif;
 }
 .wrapper {
   width: 100%;
@@ -35,7 +36,6 @@ clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 59% 70%, 50% 100%, 39% 70%, 0 70%);
 label {
   font-weight: 700;
   font-size: 1.5rem;
-/*   float: left; */
   margin-right: 1.5rem;
 }
 .fas {
@@ -65,23 +65,33 @@ input {
   margin-bottom: 1.5rem;
   border: none;
 }
-#submit {
-  margin: 0 auto;
-  font-size: 1rem;
-  padding: .5rem 3rem;
+.buttonSpace {
+  width: 100%;
+  text-align: center;
+}
+.buttonSpace button {
   border-radius: 10px;
-  display: block;
+  display: inline-block;
+  padding: .5rem 4rem;
+  font-family: 'Lora', serif;
+  font-size: 1.2rem;
+
+}
+#splitBtn {
   transition: .3s;
   background-color: #53BD9C;
   color: #fff;
 }
-#submit:hover {
+#splitBtn:hover {
   border: 1px solid #53BD9C;
   background-color: #fff;
   letter-spacing: .4rem;
   color: #2E3F51;
 }
-
+#resetBtn {
+  background-color: #2E3F51;
+  color: white;
+}
 #perPerson {
   padding-top: 1.5rem;
   font-family: 'Barriecito', cursive;
@@ -115,4 +125,10 @@ footer {
 @media screen and (max-width: 600px) {
  .insert {
   width: 90%;
+}
+.buttonSpace button {
+  width: 90%;
+  display: inline-table;
+  margin-top: .6rem;
+}
 }
