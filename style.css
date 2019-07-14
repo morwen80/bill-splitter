@@ -59,18 +59,6 @@ input {
 #tipCustom {
   display: none;
 }
-/* #tipPercent, #tipCustom {
-  display: inline-block;
-  width: auto;
-  margin-left: 1rem;
-  width: 33%;
-}
-#tipPercent {
-  margin-right: 1rem;
-}
-#tipCustom {
-  margin-left: 1.5rem;
-} */
 
 #switchTip {
   font-weight: 700;
@@ -80,7 +68,7 @@ input {
 #submit {
   margin: 0 auto;
   font-size: 1rem;
-  padding: .5rem 1rem;
+  padding: .5rem 3rem;
   border-radius: 10px;
   display: block;
   transition: .3s;
