@@ -9,6 +9,9 @@ const splitting = () => {
 
   if(tipPercent.value.length > 0) {
     addPercentageToTotal()
+
+  } else if (tipCustom.value.length > 0) {
+    addCustomToTotal()
   }
 
   else {
@@ -22,9 +25,15 @@ const addPercentageToTotal = () => {
   const total = parseInt(document.querySelector('#total').value)
   const totalWithTip = total + (tipPercent * total) / 100
   const people = document.querySelector('#people').value
-  // const result = total + tipToAdd
   document.querySelector('#perPerson').innerHTML = (totalWithTip / people).toFixed(2);
 }
+
+const addCustomToTotal = () => {
+  const tipCustom = parseInt(document.querySelector('#tipCustom').value);
+  const total = parseInt(document.querySelector('#total').value)
+  const people = document.querySelector('#people').value
+  document.querySelector('#perPerson').innerHTML = (total + tipCustom / people).toFixed(2);
+  }
 
 const btn = document.querySelector('#submit')
 btn.addEventListener('click', function(e) {
