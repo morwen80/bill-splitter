@@ -28,11 +28,10 @@ const splitBtn = document.querySelector('#splitBtn')
     splitting()
 })
 
-
-
 document.querySelector('#resetBtn').addEventListener('click', function(e) {
   e.preventDefault();
   document.querySelector('.insert').reset();
+  document.querySelector('#perPerson').innerHTML = "0"
 })
 
  const switchTip = () => {
@@ -40,16 +39,17 @@ document.querySelector('#resetBtn').addEventListener('click', function(e) {
    const tipCustom = document.querySelector('#tipCustom');
    const switchBtn = document.querySelector('#switchTip')
 
-   if(tipPercent.style.display = "none") {
+   if(tipPercent.style.display = "block") {
      tipPercent.style.display = "none";
      tipCustom.style.display = "block";
      switchBtn.innerHTML = "add a percentage of the total instead"
    }
-   // else {
-   //   tipCustom.style.display = "none";
-   //   tipPercent.style.display = "block";
-   //   switchBtn.innerHTML = "prefer a custom tip?"
-   // }
+   else {
+     tipCustom.style.display = "none";
+     tipPercent.style.display = "block";
+     switchBtn.innerHTML = "prefer a custom tip?"
+   }
+
  }
 
  document.querySelector('#switchTip').addEventListener('click', function(e){

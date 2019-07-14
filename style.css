@@ -50,6 +50,9 @@ input {
   border-bottom: 1px solid #ccc;
   width: 75%;
 }
+input::placeholder {
+  color: #c1c1c1;
+}
 #tipPercent, #tipCustom {
   margin-bottom: .5rem;
 }
@@ -70,6 +73,7 @@ input {
   text-align: center;
 }
 .buttonSpace button {
+  margin-top: .6rem;
   border-radius: 10px;
   display: inline-block;
   padding: .5rem 4rem;
@@ -111,7 +115,7 @@ footer {
 /*  =============== . MEDIA QUERIES ============ */
 @media screen and (max-width: 992px) {
   .insert {
-  width: 70%;
+  width: 80%;
 }
   label {
     display: block;
@@ -129,6 +133,6 @@ footer {
 .buttonSpace button {
   width: 90%;
   display: inline-table;
-  margin-top: .6rem;
+
 }
 }
