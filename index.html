@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"
+    <script src="https://kit.fontawesome.com/2d2b5aa704.js"></script>
+      <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Bill Splitter</title>
+  </head>
+  <body>
+    <div class="wrapper">
+  <div class="header">
+    Bill Splitter
+  </div>
+
+  <form class="insert">
+    <label id="totalL"><i class="fas fa-coins"></i> How much?</label>
+    <input id="total" placeholder="total">
+
+     <label id="totalL"><i class="fas fa-users"></i> How many?</label>
+    <input id="people" placeholder="people">
+
+    <label id="tipL"><i class="fas fa-heart"></i> Feelin' generous? Add a tip!</label>
+    <input id="tipPercent" placeholder="% of the total">
+    <input id="tipCustom" placeholder="custom">
+    <button id="switchTip">prefer a custom tip?</button>
+
+
+    <button id="submit">Split!</button>
+<!--      <input type="submit" value="Submit" id="submit"> -->
+
+    <div id="perPerson">0</div>
+  </form>
+
+
+</div>
+
+<footer>by Valeria Ragonese</footer>
+<script src="style.js"></script>
+  </body>
+</html>

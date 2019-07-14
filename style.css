@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css?family=Barriecito&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  color: #2E3F51;
+}
+.wrapper {
+  width: 100%;
+}
+
+.header {
+  width: 100%;
+  background-color: #53BD9C;
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 4rem;
+  font-size: 4rem;
+  font-family: 'Barriecito', cursive;
+  margin-bottom: 2rem;
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 59% 70%, 50% 100%, 39% 70%, 0 70%);
+
+clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 59% 70%, 50% 100%, 39% 70%, 0 70%);
+}
+
+.insert {
+  margin: 0 auto;
+  border: 2px dashed #2E3F51;
+  width: 35%;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+label {
+  font-weight: 700;
+  font-size: 1.5rem;
+/*   float: left; */
+  margin-right: 1.5rem;
+}
+.fas {
+  font-size: 1rem;
+  margin-right: .4rem;
+}
+input {
+  margin: .8rem 2rem 2rem 0;
+  display: block;
+  font-size: 1.1rem;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  width: 75%;
+}
+#tipPercent, #tipCustom {
+  margin-bottom: .5rem;
+}
+#tipPercent {
+  display: block;
+}
+#tipCustom {
+  display: none;
+}
+/* #tipPercent, #tipCustom {
+  display: inline-block;
+  width: auto;
+  margin-left: 1rem;
+  width: 33%;
+}
+#tipPercent {
+  margin-right: 1rem;
+}
+#tipCustom {
+  margin-left: 1.5rem;
+} */
+
+#switchTip {
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  border: none;
+}
+#submit {
+  margin: 0 auto;
+  font-size: 1rem;
+  padding: .5rem 1rem;
+  border-radius: 10px;
+  display: block;
+  transition: .3s;
+  background-color: #53BD9C;
+  color: #fff;
+}
+#submit:hover {
+  border: 1px solid #53BD9C;
+  background-color: #fff;
+  letter-spacing: .4rem;
+  color: #2E3F51;
+}
+
+#perPerson {
+  padding-top: 1.5rem;
+  font-family: 'Barriecito', cursive;
+  font-size: 4rem;
+  font-weight: 400;
+  text-align: center;
+  color: #53BD9C;
+}
+
+footer {
+  padding-top: 2rem;
+  text-align: center;
+  font-size: 1rem;
+}
+
+
+/*  =============== . MEDIA QUERIES ============ */
+@media screen and (max-width: 992px) {
+  .insert {
+  width: 70%;
+}
+  label {
+    display: block;
+  }
+
+  #submit {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+ .insert {
+  width: 90%;
+}
