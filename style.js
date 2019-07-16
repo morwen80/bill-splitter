@@ -1,5 +1,3 @@
-
-
 const splitting = () => {
   let total = parseInt(document.querySelector('#total').value)
   const people = parseInt(document.querySelector('#people').value)
@@ -21,7 +19,6 @@ const splitting = () => {
   }
  }
 
-
 const splitBtn = document.querySelector('#splitBtn')
   splitBtn.addEventListener('click', function(e) {
     e.preventDefault();
@@ -31,28 +28,38 @@ const splitBtn = document.querySelector('#splitBtn')
 document.querySelector('#resetBtn').addEventListener('click', function(e) {
   e.preventDefault();
   document.querySelector('.insert').reset();
+  tipCustom.disabled = false;
+  tipPercent.disabled = false;
   document.querySelector('#perPerson').innerHTML = "0"
 })
 
- const switchTip = () => {
-   const tipPercent = document.querySelector('#tipPercent');
-   const tipCustom = document.querySelector('#tipCustom');
-   const switchBtn = document.querySelector('#switchTip')
+ document.querySelector('#addTip').addEventListener('click', function(e){
+   e.preventDefault();
+   showTipButtons();
+   selectTip();
+})
 
-   if(tipPercent.style.display = "block") {
-     tipPercent.style.display = "none";
-     tipCustom.style.display = "block";
-     switchBtn.innerHTML = "add a percentage of the total instead"
-   }
-   else {
-     tipCustom.style.display = "none";
-     tipPercent.style.display = "block";
-     switchBtn.innerHTML = "prefer a custom tip?"
-   }
 
+ const showTipButtons = () => {
+   const tipBtns = document.querySelector('#tipButtons')
+   if(tipBtns.style.display === "block") {
+     tipBtns.style.display = "none"
+   } else {
+     tipBtns.style.display = "block"
+   }
  }
 
- document.querySelector('#switchTip').addEventListener('click', function(e){
-   e.preventDefault();
-   switchTip();
- })
+const selectTip = () => {
+  const tipPercent = document.querySelector('#tipPercent');
+  const tipCustom = document.querySelector('#tipCustom');
+
+  tipPercent.addEventListener('click', function(e) {
+    e.preventDefault();
+    tipCustom.disabled = true;
+  });
+
+  tipCustom.addEventListener('click', function(e) {
+    e.preventDefault();
+    tipPercent.disabled = true;
+  });
+ }

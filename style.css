@@ -53,22 +53,35 @@ input {
 input::placeholder {
   color: #c1c1c1;
 }
-#tipPercent, #tipCustom {
-  margin-bottom: .5rem;
-}
-#tipPercent {
-  display: block;
-}
-#tipCustom {
-  display: none;
+input:focus {
+  outline:none;
 }
 
+#addTip {
+  border: none;
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: #53BD9C;
+  font-family: 'Lora', serif;
+}
+#addTip:hover {
+  color: #2E3F51;
+}
+#tipButtons {
+display: none;
+  transition: display 3s ease-in;
+  -webkit-transition: display 3s ease-in;
+}
+#tipPercent{
+  margin-bottom: .5rem;
+}
 #switchTip {
   font-weight: 700;
   margin-bottom: 1.5rem;
   border: none;
 }
 .buttonSpace {
+  margin-top: 1rem;
   width: 100%;
   text-align: center;
 }
@@ -79,7 +92,6 @@ input::placeholder {
   padding: .5rem 4rem;
   font-family: 'Lora', serif;
   font-size: 1.2rem;
-
 }
 #splitBtn {
   transition: .3s;
