@@ -2,19 +2,13 @@ const splitting = () => {
   let total = parseInt(document.querySelector('#total').value);
   const people = parseInt(document.querySelector('#people').value);
   const tipPercent = document.querySelector('#tipPercent')
-  const tipCustom = document.querySelector('#tipCustom');
 
   if(tipPercent.value.length > 0) {
-    disableCustomTip();
    let calcPercent = parseInt(tipPercent.value)
     const totalWithTip = total + (calcPercent * total) / 100;
     document.querySelector('#perPerson').innerHTML = (totalWithTip / people).toFixed(2);
   }
-    else if (tipCustom.value.length > 0) {
-      disablePercentTip();
-      total = total + parseInt(tipCustom.value)
-      document.querySelector('#perPerson').innerHTML = (total / people).toFixed(2);
-  }
+
   else {
     const result = total / people;
     document.querySelector('#perPerson').innerHTML = result.toFixed(2);
