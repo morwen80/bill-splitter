@@ -1,16 +1,18 @@
 const splitting = () => {
-  let total = parseInt(document.querySelector('#total').value)
-  const people = parseInt(document.querySelector('#people').value)
-
+  let total = parseInt(document.querySelector('#total').value);
+  const people = parseInt(document.querySelector('#people').value);
+  const tipPercent = document.querySelector('#tipPercent')
+  const tipCustom = document.querySelector('#tipCustom');
 
   if(tipPercent.value.length > 0) {
-    const tipPercent = parseInt(document.querySelector('#tipPercent').value)
-    const totalWithTip = total + (tipPercent * total) / 100;
+    disableCustomTip();
+   let calcPercent = parseInt(tipPercent.value)
+    const totalWithTip = total + (calcPercent * total) / 100;
     document.querySelector('#perPerson').innerHTML = (totalWithTip / people).toFixed(2);
   }
     else if (tipCustom.value.length > 0) {
-      const tipCustom = parseInt(document.querySelector('#tipCustom').value);
-      total = total + tipCustom
+      disablePercentTip();
+      total = total + parseInt(tipCustom.value)
       document.querySelector('#perPerson').innerHTML = (total / people).toFixed(2);
   }
   else {
@@ -20,12 +22,12 @@ const splitting = () => {
  }
 
 const splitBtn = document.querySelector('#splitBtn')
-  splitBtn.addEventListener('click', function(e) {
+  splitBtn.addEventListener('click', (e) => {
     e.preventDefault();
     splitting()
 })
 
-document.querySelector('#resetBtn').addEventListener('click', function(e) {
+document.querySelector('#resetBtn').addEventListener('click', (e) => {
   e.preventDefault();
   document.querySelector('.insert').reset();
   tipCustom.disabled = false;
@@ -33,7 +35,7 @@ document.querySelector('#resetBtn').addEventListener('click', function(e) {
   document.querySelector('#perPerson').innerHTML = "0"
 })
 
- document.querySelector('#addTip').addEventListener('click', function(e){
+ document.querySelector('#addTip').addEventListener('click', (e) => {
    e.preventDefault();
    showTipButtons();
    selectTip();
@@ -49,17 +51,12 @@ document.querySelector('#resetBtn').addEventListener('click', function(e) {
    }
  }
 
-const selectTip = () => {
-  const tipPercent = document.querySelector('#tipPercent');
-  const tipCustom = document.querySelector('#tipCustom');
+ const disableCustomTip = () => {
+   document.querySelector('#tipCustom').disabled = true
+   document.querySelector('#tipPercent').disabled = false
+ }
 
-  tipPercent.addEventListener('click', function(e) {
-    e.preventDefault();
-    tipCustom.disabled = true;
-  });
-
-  tipCustom.addEventListener('click', function(e) {
-    e.preventDefault();
-    tipPercent.disabled = true;
-  });
+ const disablePercentTip = () => {
+   document.querySelector('#tipPercent').disabled = true
+   document.querySelector('#tipCustom').disabled = false
  }
